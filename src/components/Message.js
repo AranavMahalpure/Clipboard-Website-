@@ -12,7 +12,7 @@ const Message = () => {
 
 useEffect(() => {
   // Fetch messages from the backend
-  axios.get('clipboard-backend.vercel.app/api/messages')
+  axios.get('http://clipboard-backend.vercel.app/api/messages')
     .then(response => {
       // Sort the messages array in descending order of their timestamp or date
       const sortedMessages = response.data.sort((a, b) => {
@@ -36,7 +36,7 @@ useEffect(() => {
  const handlePostMessage = () => {
     if (newMessage.trim() !== '') {
       // Post new message to the backend
-      axios.post('clipboard-backend.vercel.app/api/messages', { content: newMessage })
+      axios.post('http://clipboard-backend.vercel.app/api/messages', { content: newMessage })
         .then(response => {
           setMessages([...messages, response.data,]);
           setNewMessage('');
@@ -47,7 +47,7 @@ useEffect(() => {
 
  const handleDeleteMessage = (id) => {
     // Delete message from the backend
-    axios.delete(`clipboard-backend.vercel.app/api/messages/${id}`)
+    axios.delete(`http://clipboard-backend.vercel.app/api/messages/${id}`)
       .then(() => {
         setMessages(messages.filter(message => message._id !== id));
       })
@@ -68,7 +68,7 @@ useEffect(() => {
  
   if (updatedMessage) {
      // Update the message on the backend
-     axios.put(`clipboard-backend.vercel.app/api/messages/${id}`, { content: updatedMessage })
+     axios.put(`http://clipboard-backend.vercel.app/api/messages/${id}`, { content: updatedMessage })
        .then(() => {
          setMessages(messages.map(message => message._id === id ? { ...message, content: updatedMessage } : message));
        })
