@@ -78,6 +78,7 @@ useEffect(() => {
  return (
     <div className="container mx-auto px-4">
       <h1 className="text-3xl font-bold mb-4">Message Board</h1>
+  <span> Wait for a Minute to Load the Recent Messages </span>
       <div className="flex-row">
         <textarea
           rows="4"
