@@ -1,6 +1,7 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#The Live Link of the Project is 
+https://clipboard-website-kj6n-git-main-aranav-mahalpures-projects.vercel.app/
 
 ## Available Scripts
 
